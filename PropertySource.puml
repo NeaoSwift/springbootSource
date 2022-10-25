@@ -1,0 +1,13 @@
+@startuml
+class org.springframework.boot.context.properties.source.ConfigurationPropertySources {
+- {static} String ATTACHED_PROPERTY_SOURCE_NAME
++ {static} boolean isAttachedConfigurationPropertySource(PropertySource<?>)
++ {static} void attach(Environment)
++ {static} Iterable<ConfigurationPropertySource> get(Environment)
++ {static} Iterable<ConfigurationPropertySource> from(PropertySource<?>)
++ {static} Iterable<ConfigurationPropertySource> from(Iterable<PropertySource<?>>)
+- {static} Stream<PropertySource<?>> streamPropertySources(Iterable<PropertySource<?>>)
+- {static} Stream<PropertySource<?>> flatten(PropertySource<?>)
+- {static} boolean isIncluded(PropertySource<?>)
+}
+@enduml

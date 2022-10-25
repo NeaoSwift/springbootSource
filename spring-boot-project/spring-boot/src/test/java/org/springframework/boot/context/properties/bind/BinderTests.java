@@ -170,6 +170,7 @@ public class BinderTests {
 		assertThat(result.get().getValue()).isEqualTo("123");
 	}
 
+	// mockito 用法
 	@Test
 	public void bindToValueShouldTriggerOnSuccess() {
 		this.sources.add(new MockConfigurationPropertySource("foo", "1", "line1"));
@@ -232,6 +233,7 @@ public class BinderTests {
 		this.binder.bind("foo", Bindable.of(LocalDate.class));
 	}
 
+	// 加注解的方式
 	@Test
 	public void bindWhenHasAnnotationsShouldChangeConvertedValue() {
 		this.sources.add(new MockConfigurationPropertySource("foo",

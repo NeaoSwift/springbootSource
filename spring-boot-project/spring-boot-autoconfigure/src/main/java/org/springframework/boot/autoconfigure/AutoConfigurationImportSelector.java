@@ -66,6 +66,9 @@ import org.springframework.util.StringUtils;
  * @since 1.3.0
  * @see EnableAutoConfiguration
  */
+// 这是一个核心类
+// 这个类处理在META-INF/spring-autoconfigure-metadata.properties文件中的依赖类
+// @AutoConfigureAfter @AutoConfigureBefore来确认第三方依赖类的顺序
 public class AutoConfigurationImportSelector
 		implements DeferredImportSelector, BeanClassLoaderAware, ResourceLoaderAware,
 		BeanFactoryAware, EnvironmentAware, Ordered {
@@ -100,6 +103,7 @@ public class AutoConfigurationImportSelector
 		checkExcludedClasses(configurations, exclusions);
 		configurations.removeAll(exclusions);
 		configurations = filter(configurations, autoConfigurationMetadata);
+		// 处理事件监听器
 		fireAutoConfigurationImportEvents(configurations, exclusions);
 		return StringUtils.toStringArray(configurations);
 	}

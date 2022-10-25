@@ -545,6 +545,7 @@ public class SpringApplication {
 	 */
 	protected void bindToSpringApplication(ConfigurableEnvironment environment) {
 		try {
+			// 应该将spring.main开头的配置做了绑定  可以看下BinderTests理解
 			Binder.get(environment).bind("spring.main", Bindable.ofInstance(this));
 		}
 		catch (Exception ex) {

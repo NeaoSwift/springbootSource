@@ -54,6 +54,7 @@ import org.springframework.util.ClassUtils;
  * @author Phillip Webb
  * @author Madhura Bhave
  * @since 2.0.0
+ * @see https://www.jianshu.com/p/4feab6df384e
  */
 public class Binder {
 
@@ -369,6 +370,8 @@ public class Binder {
 	 * @param environment the environment source (must have attached
 	 * {@link ConfigurationPropertySources})
 	 * @return a {@link Binder} instance
+	 * <p>实例 BinderTest#bindToValueWithMissingPlaceholderShouldResolveToValueWithPlaceholder
+	 * 帮助理解
 	 */
 	public static Binder get(Environment environment) {
 		return new Binder(ConfigurationPropertySources.get(environment),
